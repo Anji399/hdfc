@@ -21,9 +21,9 @@
   
   <distributionManagement>
     <snapshotRepository>
-      <id>icici</id>
-      <name>icici</name>
-      <url>http://localhost:8081/repository/icici/</url>
+      <id>hdfc</id>
+      <name>hdfc</name>
+      <url>http://localhost:8081/repository/hdfc/</url>
     </snapshotRepository>
   </distributionManagement>
 
