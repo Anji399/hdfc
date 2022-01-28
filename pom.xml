@@ -21,9 +21,9 @@
   
   <distributionManagement>
     <snapshotRepository>
-      <id>cal_dev</id>
-      <name>cal_dev</name>
-      <url>http://localhost:8081/repository/cal_dev/</url>
+      <id>icici</id>
+      <name>icici</name>
+      <url>http://localhost:8081/repository/icici/</url>
     </snapshotRepository>
   </distributionManagement>
 
