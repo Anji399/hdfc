@@ -4,7 +4,7 @@ RUN apt-get -y update && apt-get -y upgrade && \
     mkdir /usr/local/tomcat
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.75/bin/apache-tomcat-8.5.75.tar.gz -O /tmp/tomcat.tar.gz
 RUN cd /tmp && tar xvfz tomcat.tar.gz && cp -Rv /tmp/apache-tomcat-8.5.75/* /usr/local/tomcat/
-COPY /*.war /usr/local/tomcat/webapps/
+COPY target/hdfc.war /usr/local/tomcat/webapps/hdfc.war
 EXPOSE 8080
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
 
