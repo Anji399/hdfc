@@ -1,0 +1,24 @@
+pipeline {
+  agent any
+  stages
+    {
+    stage('Git checkout') {
+      steps {
+        git changelog: false, poll: false, url: 'https://github.com/Anji399/hdfc.git' 
+      }
+    }
+    stage('Package') {
+      steps {
+        sh 'mvn package'
+      }
+    }
+    stage('Upload to AWS') {
+      steps {
+        withAWS(region:'ap-south-1',credentials:'aws') {
+        sh 'echo "Uploading content with AWS creds"'
+            s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'target/hdfc.war', bucket:'hdfcstore')
+        }
+      }
+    }
+  }
+}
